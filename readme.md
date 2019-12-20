@@ -1,5 +1,5 @@
 # Elasticsearch + Sudachi + Kibana
-本リポジトリは、形態素解析器Sudachiを組み込んだELasticsearchのDockerコンテナを提供します。
+本リポジトリは、形態素解析器Sudachiを組み込んだElasticsearchのDockerコンテナを提供します。
 また同時にKibanaコンテナの立ち上げも実施します。
 
 # Installation
