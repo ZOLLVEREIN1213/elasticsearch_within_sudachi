@@ -1,0 +1,51 @@
+{
+  "settings" : {
+      "analysis" : {
+          "filter" : {
+              "romaji_readingform" : {
+                  "type" : "sudachi_readingform",
+                  "use_romaji" : true
+              },
+              "katakana_readingform" : {
+                  "type" : "sudachi_readingform",
+                  "use_romaji" : false
+              }
+          },
+          "analyzer" : {
+              "sudachi_baseform_analyzer" : {
+                  "filter" : [ "sudachi_baseform" ],
+                  "type" : "custom",
+                  "tokenizer" : "sudachi_tokenizer"
+              },
+              "sudachi_normalizedform_analyzer" : {
+                  "filter" : [ "sudachi_normalizedform" ],
+                  "type" : "custom",
+                  "tokenizer" : "sudachi_tokenizer"
+              },
+              "sudachi_readingform_analyzer" : {
+                  "filter" : [ "katakana_readingform" ],
+                  "type" : "custom",
+                  "tokenizer" : "sudachi_tokenizer"
+              },
+              "sudachi_romaji_analyzer" : {
+                  "filter" : [ "romaji_readingform" ],
+                  "type" : "custom",
+                  "tokenizer" : "sudachi_tokenizer"
+              },
+              "sudachi_analyzer": {
+                  "filter": [],
+                  "tokenizer": "sudachi_tokenizer",
+                  "type": "custom"
+              }
+          },
+          "tokenizer" : {
+              "sudachi_tokenizer": {
+                  "type": "sudachi_tokenizer",
+                  "mode": "search",
+                  "resources_path": "/usr/share/elasticsearch/config/sudachi",
+                  "settings_path": "/usr/share/elasticsearch/config/sudachi/sudachi.json"
+              }
+          }
+      }
+  }
+}
